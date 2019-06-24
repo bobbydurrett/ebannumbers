@@ -50,4 +50,18 @@ print(' ')
 print('count = '+str(count))
 print(' ')
 
+# eban numbers up to 10000
 
+print(' ')
+print('eban numbers up to and including 10000:')
+print(' ')
+
+count = 0
+
+for i in range(1,10001):
+    if not 'e' in p.number_to_words(i):
+        count += 1
+        
+print(' ')
+print('count = '+str(count))
+print(' ')
