@@ -12,6 +12,10 @@
 """
 
 import inflect
+import time
+
+before = time.perf_counter()
+
 p = inflect.engine()
 
 # eban numbers <= 1000
@@ -65,3 +69,57 @@ for i in range(1,10001):
 print(' ')
 print('count = '+str(count))
 print(' ')
+
+# eban numbers up to 100000
+
+print(' ')
+print('eban numbers up to and including 100000:')
+print(' ')
+
+count = 0
+
+for i in range(1,100001):
+    if not 'e' in p.number_to_words(i):
+        count += 1
+        
+print(' ')
+print('count = '+str(count))
+print(' ')
+
+# eban numbers up to 1000000
+
+print(' ')
+print('eban numbers up to and including 1000000:')
+print(' ')
+
+count = 0
+
+for i in range(1,1000001):
+    if not 'e' in p.number_to_words(i):
+        count += 1
+        
+print(' ')
+print('count = '+str(count))
+print(' ')
+
+# eban numbers up to 10000000
+
+print(' ')
+print('eban numbers up to and including 10000000:')
+print(' ')
+
+count = 0
+
+for i in range(1,10000001):
+    if not 'e' in p.number_to_words(i):
+        count += 1
+        
+print(' ')
+print('count = '+str(count))
+print(' ')
+
+after = time.perf_counter()
+
+print(" ")
+print("Run time in seconds: "+str(after - before))
+
