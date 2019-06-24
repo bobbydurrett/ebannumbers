@@ -14,6 +14,8 @@
 import inflect
 p = inflect.engine()
 
+# eban numbers <= 1000
+
 print(' ')
 print('eban numbers up to and including 1000:')
 print(' ')
@@ -30,8 +32,22 @@ print(' ')
 print('count = '+str(count))
 print(' ')
 
+# eban numbers 1000 to 4000
 
+print(' ')
+print('eban numbers between 1000 and 4000 (inclusive):')
+print(' ')
 
+count = 0
 
+for i in range(1000,4001):
+    if not 'e' in p.number_to_words(i):
+        print(str(i)+' ',end='')
+        count += 1
+        
+print(' ')
+print(' ')
+print('count = '+str(count))
+print(' ')
 
 
